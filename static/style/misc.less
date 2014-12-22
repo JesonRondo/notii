@@ -1,0 +1,44 @@
+.back2top {
+  @color-top: #b3b3b3;
+
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  left: 620px;
+  bottom: 40px;
+  background: @color-top;
+  border-radius: 4px;
+  overflow: hidden;
+  opacity: 0;
+  transition: .3s opacity;
+
+  &.show {
+    opacity: .8;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #FFF;
+    transform: rotateZ(45deg);
+    left: 8px;
+    top: 12px;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: @color-top;
+    transform: rotateZ(45deg);
+    left: 8px;
+    top: 16px;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}

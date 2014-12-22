@@ -3,7 +3,7 @@
 var co = require('co');
 var mysql = require('mysql');
 var wrapper = require('co-mysql');
-var conf = require('../config');
+var conf = require('../../conf/config');
 
 var pool = mysql.createPool(conf.dbinfo());
 var db = wrapper(pool);
@@ -22,7 +22,14 @@ module.exports = {
       var sql = 'select * from v_article where status=0';
     }
 
-    sql += ' order by createtime desc limit ' + start + ',' + len + ';'
+    // sql += ' order by createtime desc limit ' + start + ',' + len + ';'
+    sql += ' order by createtime desc;'
+
+    return db.query(sql);
+  },
+
+  links: function() {
+    var sql = 'select * from v_info where did=1 and status=0';
 
     return db.query(sql);
   }

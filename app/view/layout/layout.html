@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }} - Vic</title>
+  {% if debug %}
+  <link rel="stylesheet/less" href="/style/d.less">
+  <script src="/script/less.js"></script>
+  <script>
+    less["logLevel"] = 1;
+    less["env"] = "development";
+    window.overrideLess();
+  </script>
+  {% else %}
+  <link rel="stylesheet" href="/_/style/d.css?_=beta">
+  {% endif %}
+</head>
+<body>
+  <div class="wrap">
+    {% include 'layout/header.html' %}
+
+    <div class="main">
+      {% block content %}
+      {% endblock %}
+
+      {% include 'layout/widget.html' %}
+    </div>
+
+    {% include 'layout/footer.html' %}
+  </div>
+
+  <a href="javascript:window.scrollTo(0, 0);" class="back2top" id="J_back2top"></a>
+
+  {% if debug %}
+  <script src="/script/scrolltop.js"></script>
+  <script src="/script/prettify.js"></script>
+  <script>
+    prettyPrint();
+  </script>
+  {% else %}
+  <script src="/_/script/d.js?_=beta"></script>
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?dcfa320f3848c24822c7ca668c9467b6";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+  {% endif %}
+</body>
+</html>

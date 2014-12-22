@@ -1,9 +1,21 @@
-var dao = require('../helper/dao');
+'use strict' ;
+
+var
+  util = require('util'),
+
+  dao = require('../helper/dao'),
+  data = require('../helper/data');
 
 module.exports = function *() {
-  var rows = yield dao.get({});
+  var rows = yield dao.get({
+    cate: this.params.cate
+  });
 
-  console.log(rows);
+  var links = yield dao.links();
 
-  this.body = 'user.name';
+  this.body = swig.renderFile('list.html', util._extend(data, {
+    title: 'Blog',
+    links: links,
+    articles: rows
+  }));
 };

@@ -1,3 +1,5 @@
+'use strict' ;
+
 var router = require('koa-router'),
   fn_cate = require('./fn/cate'),
   fn_article = require('./fn/article');
