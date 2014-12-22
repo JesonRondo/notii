@@ -1,6 +1,5 @@
 @import './reset.less';
 @import './prettify.less';
-@import './misc.less';
 
 .wrap {
   padding: 61px;
@@ -115,6 +114,7 @@
   right: 10px;
 
   .people {
+    position: relative;
     float: left;
     padding-right: 4px;
     margin-bottom: 4px;
@@ -128,9 +128,12 @@
       img {
         transform: translate3d(0, -10px, 0);
       }
+
+      .notice {
+        display: block;
+      }
     }
   }
-
 }
 
 .footer {
@@ -159,3 +162,5 @@
 ::-webkit-scrollbar-thumb:active {
     background-color:#666
 }
+
+@import './misc.less';

@@ -42,3 +42,28 @@
     opacity: 1;
   }
 }
+
+.notice {
+  display: none;
+  position: absolute;
+  padding: 0 4px;
+  top: -14px;
+  left: 10px;
+  transform-origin: 0% 0%;
+  transform: rotateZ(-90deg);
+  white-space: nowrap;
+  color: #fff;
+  background: #333;
+  background: rgba(0, 0, 0, .6);
+}
+
+.widget {
+  .people:nth-child(odd) {
+    .notice {
+      left: auto;
+      right: 14px;
+      transform-origin: 100% 0%;
+      transform: rotateZ(90deg);
+    }
+  }
+}
