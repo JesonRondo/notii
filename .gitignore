@@ -15,6 +15,7 @@ local.properties
 .settings/
 .loadpath
 
+config.js
 static/node_modules
 
 # External tool builders
