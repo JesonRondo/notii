@@ -14,7 +14,7 @@ module.exports = function *() {
   var links = yield dao.links();
 
   this.body = swig.renderFile('list.html', util._extend(data, {
-    title: 'Blog',
+    title: '只想颠倒整个世界',
     links: links,
     articles: rows
   }));
