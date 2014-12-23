@@ -11,6 +11,7 @@
   overflow: hidden;
   opacity: 0;
   transition: .3s opacity;
+  cursor: default;
 
   &.show {
     opacity: .8;
@@ -38,8 +39,9 @@
     top: 16px;
   }
 
-  &:hover {
+  &.show:hover {
     opacity: 1;
+    cursor: pointer;
   }
 }
 

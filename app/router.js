@@ -10,12 +10,4 @@ app.get('/', fn_cate);
 
 app.get('/:cate?', fn_cate);
 
-app.get('/:cate/:year/:month/:day/:blog', function *(next) {
-  this.body = fn_article(
-    this.params.cate,
-    this.params.year,
-    this.params.month,
-    this.params.day,
-    this.params.blog
-  );
-});
+app.get('/:cate/:year/:month/:day/:blog', fn_article);

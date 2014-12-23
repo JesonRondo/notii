@@ -32,6 +32,12 @@ module.exports = {
     var sql = 'select * from v_info where did=1 and status=0';
 
     return db.query(sql);
+  },
+
+  getByAlias: function(alias) {
+    var sql = 'select * from v_article where extra1="' + alias + '"';
+
+    return db.query(sql);
   }
 
 };
