@@ -59,6 +59,10 @@
       }, function(responseText) {
         if (responseText) {
           $articles.innerHTML += responseText;
+
+          if ($articles.getElementsByClassName('article').length % 3 !== 0) {
+            isLoaded = true;
+          }
         } else {
           isLoaded = true;
         }

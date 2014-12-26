@@ -12,7 +12,8 @@ module.exports = function *() {
   var links = yield dao.links();
 
   // 首次进入
-  if (!this.request.header.referer) {
+  if (!this.request.header.referer
+    || this.request.header.referer.indexOf(data.domain) < 0) {
     isfirst = true;
   }
 

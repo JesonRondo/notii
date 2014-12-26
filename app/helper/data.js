@@ -4,6 +4,7 @@ var
 
 module.exports = {
   debug: config.debug,
+  domain: 'longzhou.me',
   title: ' - Vic',
   flag: md5.digest_s('祝你幸福还是给你幸福'),
   navs: [{

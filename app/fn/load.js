@@ -12,7 +12,7 @@ module.exports = function *() {
   var data = this.request.body;
   var rows = yield dao.get({
     cate: this.request.header.referer.split(this.header.origin + '/').join(''),
-    start: data.len - 1
+    start: data.len
   });
 
   this.body = rows.length > 0 ? swig.renderFile('tpl/list.html', {

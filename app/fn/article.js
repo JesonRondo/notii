@@ -7,6 +7,8 @@ var
   data = require('../helper/data');
 
 module.exports = function *() {
+  var isfirst = false;
+
   var rows = yield dao.getByAlias([
     this.params.year,
     this.params.month,
@@ -24,9 +26,16 @@ module.exports = function *() {
 
   var links = yield dao.links();
 
+  // 首次进入
+  if (!this.request.header.referer
+    || this.request.header.referer.indexOf(data.domain) < 0) {
+    isfirst = true;
+  }
+
   this.body = swig.renderFile('article.html', util._extend(data, {
     title: rows[0].title,
     links: links,
+    isfirst: isfirst,
     article: rows[0]
   }));
 };
