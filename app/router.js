@@ -1,6 +1,7 @@
 'use strict' ;
 
 var router = require('koa-router'),
+  fn_img = require('./fn/img'),
   fn_cate = require('./fn/cate'),
   fn_load = require('./fn/load'),
   fn_about = require('./fn/about'),
@@ -11,6 +12,8 @@ app.use(router(app));
 app.get('/', fn_cate);
 
 app.get('/about', fn_about);
+
+app.get('/@@', fn_img);
 
 app.get('/:cate?', fn_cate);
 

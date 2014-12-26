@@ -14,6 +14,7 @@
         var $imgs = $widget.getElementsByTagName('img');
         for (var i = 0, len = $imgs.length; i < len; i++) {
           $imgs[i].setAttribute('src', $imgs[i].getAttribute('d-src'));
+          $imgs[i].removeAttribute('d-src');
         }
         $widget.classList.remove('hide');
       }
