@@ -7,15 +7,32 @@ var
   data = require('../helper/data');
 
 module.exports = function *() {
+  var isfirst = false,
+    cate = this.params.cate;
+
   var rows = yield dao.get({
-    cate: this.params.cate
+    cate: cate
   });
+
+  // 错误页重定向
+  if (rows.length === 0
+    && this.request.url !== '/') {
+    this.response.redirect('/');
+    return;
+  }
 
   var links = yield dao.links();
 
+  // 首次进入
+  if (!this.request.header.referer) {
+    isfirst = true;
+  }
+
   this.body = swig.renderFile('list.html', util._extend(data, {
-    title: '只想颠倒整个世界',
+    title: '时间是静止的，是我们在流逝',
     links: links,
-    articles: rows
+    articles: rows,
+    isfirst: isfirst,
+    cate: cate ? '/' + cate : '/'
   }));
 };

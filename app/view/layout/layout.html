@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html{% if isfirst %} class="stage start"{% endif %}>
 <head>
   <meta charset="UTF-8">
   <title>{{ title }} - Vic</title>
@@ -12,7 +12,7 @@
     window.overrideLess();
   </script>
   {% else %}
-  <link rel="stylesheet" href="/_/style/d.css?_=beta">
+  <link rel="stylesheet" href="/_/style/d.css?_=delta">
   {% endif %}
 </head>
 <body>
@@ -32,15 +32,12 @@
   <a href="javascript:window.scrollTo(0, 0);" class="back2top" id="J_back2top"></a>
 
   {% if debug %}
-  <script src="/script/scrolltop.js"></script>
+  <script src="/script/scrolling.js"></script>
   <script src="/script/prettify.js"></script>
-  <script>
-    prettyPrint();
-  </script>
+  <script src="/script/d.js"></script>
   {% else %}
-  <script src="/_/script/d.js?_=beta"></script>
+  <script src="/_/script/d.js?_=delta"></script>
   <script>
-  prettyPrint();
   var _hmt = _hmt || [];
   (function() {
     var hm = document.createElement("script");

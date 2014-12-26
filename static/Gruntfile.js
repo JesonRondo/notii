@@ -19,8 +19,9 @@ module.exports = function(grunt) {
       'built': {
         files: {
           '_/script/d.js': [
+            'script/scrolling.js',
             'script/prettify.js',
-            'script/scrolltop.js'
+            'script/d.js'
           ],
         },
       },

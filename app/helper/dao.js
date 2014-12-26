@@ -22,8 +22,7 @@ module.exports = {
       var sql = 'select * from v_article where status=0';
     }
 
-    // sql += ' order by createtime desc limit ' + start + ',' + len + ';'
-    sql += ' order by createtime desc;'
+    sql += ' order by createtime desc limit ' + start + ',' + len + ';'
 
     return db.query(sql);
   },

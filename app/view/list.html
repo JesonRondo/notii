@@ -1,19 +1,7 @@
 {% extends 'layout/layout.html' %}
 
 {% block content %}
-<ul class="alist">
-  {% for index, article in articles %}
-  <li class="article">
-    <h3 class="tit">{{ article.title }}</h3>
-    <div class="cnt">
-    {% autoescape false %}
-      {{ article.text }}
-    {% endautoescape %}
-    </div>
-    <div class="timetag">
-      {{ article.createtime | date('F jS, Y') }}
-    </div>
-  </li>
-  {% endfor %}
+<ul class="alist" id="J_articles">
+  {% include 'tpl/list.html' %}
 </ul>
 {% endblock %}

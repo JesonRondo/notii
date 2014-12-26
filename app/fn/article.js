@@ -14,6 +14,14 @@ module.exports = function *() {
     this.params.blog.split('.')[0],
   ].join('-'));
 
+
+  // 错误页重定向
+  if (rows.length === 0
+    && this.request.url !== '/') {
+    this.response.redirect('/');
+    return;
+  }
+
   var links = yield dao.links();
 
   this.body = swig.renderFile('article.html', util._extend(data, {

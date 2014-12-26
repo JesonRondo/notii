@@ -1,0 +1,11 @@
+<li class="article">
+  <h3 class="tit">{{ article.title }}</h3>
+  <div class="cnt">
+  {% autoescape false %}
+    {{ article.text }}
+  {% endautoescape %}
+  </div>
+  <div class="timetag">
+    {{ article.createtime | date('F jS, Y') }}
+  </div>
+</li>

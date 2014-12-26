@@ -1,4 +1,5 @@
-var koa = require('koa');
+var
+  koa = require('koa');
 
 global.app = koa();
 global.swig = require('swig');
