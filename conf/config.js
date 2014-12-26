@@ -1,9 +1,9 @@
 module.exports = {
-  debug: true,
+  debug: false,
 
   dbinfo: function() {
     return {
-      host: '115.126.23.9',
+      host: '127.0.0.1',
       user: 'root',
       password: 'pazzword',
       database:'zombie',
