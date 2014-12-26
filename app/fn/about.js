@@ -11,6 +11,7 @@ module.exports = function *() {
 
   this.body = swig.renderFile('about.html', util._extend(data, {
     title: 'Halo Nice 2 meet u',
-    links: links
+    links: links,
+    cate: '/about'
   }));
 };
