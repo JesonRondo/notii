@@ -3,7 +3,8 @@
 var
   path = require('path'),
   fs = require('fs'),
-  cofs = require('co-fs');
+  cofs = require('co-fs'),
+  easyimg = require('easyimage');
 
 var getScaleInfo = function(realPath) {
   var paths = realPath.split('@');
@@ -12,14 +13,18 @@ var getScaleInfo = function(realPath) {
     var width, height;
 
     if (paths.length > 1) {
-      width = paths[1].split('x')[0];
-      height = paths[1].split('x')[1];
+      var size = paths[1].split('.');
+
+      width = size[0].split('x')[0];
+      height = size[0].split('x')[1];
+
+      realPath = paths[0] + '.' + size[1];
     }
 
     return paths.length > 1 && width && height ? {
       width: width,
       height: height,
-      url: paths[0]
+      url: realPath
     } : {
       url: realPath
     };
@@ -47,17 +52,24 @@ module.exports = function *() {
   if (isPathExist
     && !fs.lstatSync(realPath).isDirectory()) {
     imgOutPath = realPath;
+
+    if (scaleInfo.width) {
+      var dstPath = path.resolve(staticPath, imgPath);
+      yield easyimg.resize({
+        src: realPath,
+        dst: dstPath,
+        width: scaleInfo.width,
+        height: scaleInfo.height
+      });
+      imgOutPath = dstPath;
+    }
+
   } else {
     imgOutPath = img404;
   }
 
   var exttype = path.extname(imgOutPath).split('.').join('');
-
   img = yield cofs.readFile(imgOutPath);
-
-  if (scaleInfo.width) {
-    // img = yield gm(img).toBuffer(function() {});
-  }
 
   this.response.type = 'image/' + exttype;
   this.body = img;
