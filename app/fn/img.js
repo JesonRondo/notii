@@ -13,12 +13,10 @@ var getScaleInfo = function(realPath) {
     var width, height;
 
     if (paths.length > 1) {
-      var size = paths[1].split('.');
+      width = paths[1].split('x')[0];
+      height = paths[1].split('x')[1];
 
-      width = size[0].split('x')[0];
-      height = size[0].split('x')[1];
-
-      realPath = paths[0] + '.' + size[1];
+      realPath = paths[0];
     }
 
     return paths.length > 1 && width && height ? {
@@ -42,7 +40,7 @@ module.exports = function *() {
     imgPath = this.query.imgpath,
     realPath = path.resolve(staticPath, imgPath),
     img404 = path.resolve(staticPath, 'img/404.jpg'),
-    imgOutPath, img;
+    imgOutPath, img, exttype;
 
   var scaleInfo = getScaleInfo(realPath);
   realPath = scaleInfo.url;
@@ -68,7 +66,8 @@ module.exports = function *() {
     imgOutPath = img404;
   }
 
-  var exttype = path.extname(imgOutPath).split('.').join('');
+
+  exttype = path.extname(imgOutPath).split('@')[0].split('.').join('');
   img = yield cofs.readFile(imgOutPath);
 
   this.response.type = 'image/' + exttype;
