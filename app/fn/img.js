@@ -13,10 +13,16 @@ var getScaleInfo = function(realPath) {
     var width, height;
 
     if (paths.length > 1) {
-      width = paths[1].split('x')[0];
-      height = paths[1].split('x')[1];
-
       realPath = paths[0];
+
+      var sizeinfo = paths[1].split('x');
+
+      width = sizeinfo[0];
+      if (sizeinfo.length <= 1) { // no height
+        height = 9999;
+      } else {
+        height = sizeinfo[1];
+      }
     }
 
     return paths.length > 1 && width && height ? {
