@@ -1,0 +1,3 @@
+### imagemagick
+
+    yum install ImageMagick
