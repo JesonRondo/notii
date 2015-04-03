@@ -9,7 +9,7 @@ export default React.createClass({
     return (
       <article>
         <h2>{title}</h2>
-        <div>{text}</div>
+        <div dangerouslySetInnerHTML={{__html: text}} />
       </article>
     );
   }
