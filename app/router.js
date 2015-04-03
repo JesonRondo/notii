@@ -1,6 +1,8 @@
 'use strict' ;
 
 var router = require('koa-router'),
+  fn_h5 = require('./fn/h5'),
+  fn_api = require('./fn/api'),
   fn_img = require('./fn/img'),
   fn_cate = require('./fn/cate'),
   fn_load = require('./fn/load'),
@@ -8,6 +10,10 @@ var router = require('koa-router'),
   fn_article = require('./fn/article');
 
 app.use(router(app));
+
+app.get('/m', fn_h5); // h5版本
+
+app.get('/api/:apiname', fn_api); // 数据接口
 
 app.get('/', fn_cate);
 
