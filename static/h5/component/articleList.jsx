@@ -10,10 +10,11 @@ export default React.createClass({
   },
 
   refreshData(props = this.props) {
-    let {source, cate} = props;
+    let {source, cate, alias} = props;
 
     $.get(source, {
-      cate: cate
+      cate: cate,
+      alias: alias
     }, function(result) {
       this.setState({
         articles: result
@@ -33,7 +34,6 @@ export default React.createClass({
 
     return (
       <ul>
-        <li>{this.props.source} - {this.props.cate}</li>
         {
           this.state.articles.map(article => {
             return (

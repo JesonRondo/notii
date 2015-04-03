@@ -10,7 +10,11 @@ var actions = {
   },
 
   'article': function() {
-    return dao.get({
+
+    var cate = this.request.query.cate;
+    var alias = this.request.query.alias;
+
+    return alias ? dao.getByAlias(alias) : dao.get({
       cate: this.request.query.cate
     });
   }

@@ -12,10 +12,7 @@ export default React.createClass({
     var cate = this.context.router.getCurrentParams().cate;
 
     return (
-      <div>
-        <h2>Hello Index {cate}</h2>
-        <ArticleList source="/api/article" cate={cate}></ArticleList>
-      </div>
+      <ArticleList source="/api/article" cate={cate}></ArticleList>
     );
   }
 });

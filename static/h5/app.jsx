@@ -12,7 +12,7 @@ var {Route, DefaultRoute} = Router;
 
 var routes = (
   <Route name="app" path="/" handler={Layout}>
-    <Route name="detail" path="detail" handler={Detail}/>
+    <Route name="detail" path="/:cate/:year/:month/:day/:blog.html" handler={Detail}/>
     <Route name="index" path="/:cate" handler={Index}/>
     <DefaultRoute handler={Index}/>
   </Route>
