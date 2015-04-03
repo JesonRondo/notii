@@ -1,0 +1,28 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "blog",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JesonRondo/notii"
+  },
+  "author": "longzhou",
+  "devDependencies": {
+    "co": "",
+    "co-fs": "",
+    "co-mysql": "",
+    "debug": "",
+    "easyimage": "",
+    "koa":"",
+    "koa-body-parser": "",
+    "koa-router": "",
+    "md5": "",
+    "mysql": "",
+    "swig": ""
+  },
+  "homepage": "https://longzhou.me",
+  "keywords": [
+    "longzhou"
+  ],
+  "license": "MIT"
+}

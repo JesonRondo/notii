@@ -2,8 +2,7 @@
 
 var
   dao = require('../helper/dao'),
-  data = require('../helper/data'),
-  bodyParser = require('koa-body-parser');
+  data = require('../helper/data');
 
 var actions = {
   'menu': function() {
