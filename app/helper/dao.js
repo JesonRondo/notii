@@ -17,12 +17,12 @@ module.exports = {
     var sql = '';
 
     if (filter['cate']) {
-      var sql = 'select * from v_article, dir_article where dir_article.name_alias="' + filter['cate'] + '" and dir_article.did = v_article.did and v_article.status=0';
+      var sql = 'select d.name_alias as cate, concat("/", d.name_alias, "/", substring(a.extra1, 1, 4), "/", substring(a.extra1, 6, 2), "/", substring(a.extra1, 9, 2), "/", substring(a.extra1, 12)) as link, a.title, a.text, a.createtime from v_article as a, dir_article as d where d.name_alias="' + filter['cate'] + '" and d.did = a.did and a.status=0';
     } else {
-      var sql = 'select * from v_article where status=0';
+      var sql = 'select d.name_alias as cate, concat("/", d.name_alias, "/", substring(a.extra1, 1, 4), "/", substring(a.extra1, 6, 2), "/", substring(a.extra1, 9, 2), "/", substring(a.extra1, 12)) as link, a.title, a.text, a.createtime from v_article as a, dir_article as d  where a.status=0 and a.did=d.did';
     }
 
-    sql += ' order by createtime desc limit ' + start + ',' + len + ';'
+    sql += ' order by a.createtime desc limit ' + start + ',' + len + ';'
 
     return db.query(sql);
   },
@@ -34,7 +34,7 @@ module.exports = {
   },
 
   getByAlias: function(alias) {
-    var sql = 'select * from v_article where extra1="' + alias + '"';
+    var sql = 'select d.name_alias as cate, concat("/", d.name_alias, "/", substring(a.extra1, 1, 4), "/", substring(a.extra1, 6, 2), "/", substring(a.extra1, 9, 2), "/", substring(a.extra1, 12)) as link, a.title, a.text, a.createtime from v_article as a, dir_article as d where a.did=d.did and a.status=0 and a.extra1="' + alias + '"';
 
     return db.query(sql);
   }

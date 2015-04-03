@@ -1,5 +1,5 @@
 module.exports = {
-  debug: false,
+  debug: true,
 
   dbinfo: function() {
     return {
