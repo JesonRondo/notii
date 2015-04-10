@@ -1,5 +1,5 @@
 import React from 'react';
-import ArticleList from '../../component/articleList';
+import Article from '../../component/article';
 
 export default React.createClass({
   
@@ -13,7 +13,7 @@ export default React.createClass({
     var alias = [year, month, day, blog.split('.')[0]].join('-');
 
     return (
-      <ArticleList source="/api/article" alias={alias}></ArticleList>
+      <Article source="/api/article" alias={alias}></Article>
     );
   }
 });

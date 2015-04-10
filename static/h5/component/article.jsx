@@ -1,32 +1,49 @@
 import React from 'react';
-import Router from 'react-router';
-
-var {Link} = Router;
+import styles from '../theme/default/article';
+import scrollViewStyles from '../theme/default/scrollView';
 
 export default React.createClass({
 
+  getInitialState() {
+    return {
+      article: {
+        title: '',
+        text: ''
+      }
+    }
+  },
+
+  refreshData(props = this.props) {
+    let {source, alias} = props;
+
+    $.get(source, {
+      alias: alias
+    }, function(result) {
+      this.setState({
+        article: result[0]
+      });
+    }.bind(this));
+  },
+
+  componentDidMount() {
+    this.refreshData();
+  },
+
+  componentWillReceiveProps(nextProps) {
+    this.refreshData(nextProps);
+  },
+
   render() {
 
-    let {title, text, link} = this.props.data;
-
-    let spParam = link.split('/');
-    spParam.shift();
-
-    let jumpParam = {
-      cate: spParam.shift(),
-      year: spParam.shift(),
-      month: spParam.shift(),
-      day: spParam.shift(),
-      blog: spParam.shift()
-    };
+    let {title, text, createtime} = this.state.article;
 
     return (
-      <article>
-        <Link to="detail" params={jumpParam}>
-          <h2>{title}</h2>
-          <div dangerouslySetInnerHTML={{__html: text}} />
-        </Link>
-      </article>
+      <div style={scrollViewStyles.scroller}>
+        <article>
+          <p style={styles.time}>{createtime}</p>
+          <div style={styles.cnt} dangerouslySetInnerHTML={{__html: text}} />
+        </article>
+      </div>
     );
   }
 

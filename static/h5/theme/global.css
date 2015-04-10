@@ -1,0 +1,112 @@
+/* 2014-01-27 @buji css reset */
+html{
+  font-size: 10px;
+}
+body, dl, dd, p, form {
+  margin: 0;
+}
+ol, ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+html, body {
+  color: #666;
+  height: 100%;
+  -webkit-tap-highlight-color:rgba(0, 0, 0, 0); /* set highlight color for user interaction */
+  -webkit-user-select:none; /* Prevent copy paste for all elements except text fields */
+  -webkit-touch-callout: none; /* prevent the popup menu on any links*/
+}
+body, button, input, select, textarea {
+  font: 14px/1.6 helvetica, tahoma, arial, sans-serif;
+  color: #666;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  margin: 0;
+}
+input, select, button, textarea {
+  font-size: 100%;
+}
+div, p, input, select, textarea, h1, h2, h3, h4, h5 {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}
+input, textarea {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  font-size: 0;
+  clear: both;
+  visibility: hidden;
+}
+a, input {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: ".";
+  clear: both;
+  height: 0;
+}
+
+#content {
+  height: 100%;
+}
+
+article p {
+  margin-bottom: 8px;
+}
+article h5 {
+  margin-bottom: 10px;
+}
+article a {
+  color: #4092dd;
+}
+article pre {
+  margin-bottom: 10px;
+  overflow: auto;
+}
+article img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont/iconfont.eot'); /* IE9*/
+  src: url('iconfont/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont/iconfont.woff') format('woff'), /* chrome、firefox */
+  url('iconfont/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('iconfont/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-close:before { content: "\e646"; }
+.icon-round:before { content: "\e6d7"; }
+.icon-loading:before { content: "\e64f"; }

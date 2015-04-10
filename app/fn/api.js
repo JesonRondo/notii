@@ -5,19 +5,23 @@ var
   data = require('../helper/data');
 
 var actions = {
-  'menu': function() {
-    return data.navs;
-  },
-
   'article': function() {
 
     var cate = this.request.query.cate;
+    var start = this.request.query.start;
+    var len = this.request.query.len;
     var alias = this.request.query.alias;
 
     return alias ? dao.getByAlias(alias) : dao.get({
-      cate: this.request.query.cate
+      cate: cate,
+      start: start,
+      len: len,
     });
-  }
+  },
+
+  'global': function() {
+    return data;
+  },
 };
 
 module.exports = function *() {

@@ -14,6 +14,7 @@
     "jsx-loader": "",
     "react": "",
     "react-router":"",
+    "react-style": "",
     "webpack": ""
   },
   "homepage": "https://longzhou.me",
