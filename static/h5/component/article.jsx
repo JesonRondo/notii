@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../theme/default/article';
+import dispatcher from '../helper/dispatcher';
 import scrollViewStyles from '../theme/default/scrollView';
 
 export default React.createClass({
@@ -19,10 +20,18 @@ export default React.createClass({
     $.get(source, {
       alias: alias
     }, function(result) {
+      let articleData = result[0];
+
       this.setState({
-        article: result[0]
+        article: articleData
+      });
+
+      dispatcher.dispatch({
+        actionType: 'header:update',
+        title: articleData.title
       });
     }.bind(this));
+
   },
 
   componentDidMount() {

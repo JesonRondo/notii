@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../theme/default/header';
+import dispatcher from '../helper/dispatcher';
 
 export default React.createClass({
 
@@ -20,6 +21,14 @@ export default React.createClass({
         data: result
       });
     }.bind(this));
+
+    dispatcher.register((load) => {
+      if (load.actionType === 'header:update') {
+        this.setState({
+          title: load.title
+        });
+      }
+    });
   },
 
   render() {
@@ -37,7 +46,7 @@ export default React.createClass({
           <p style={styles.flag}>{flag}</p>
         </div>
         <div style={hasTitle ? styles.headerShow : styles.headerHide}>
-          <h1>{title}</h1>
+          <h1 style={styles.title}>{title}</h1>
         </div>
       </header>
     );

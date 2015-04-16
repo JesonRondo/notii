@@ -5,6 +5,7 @@ let scale = 2;
 export default StyleSheet.create({
   
   frame: {
+    position: 'relative',
     marginTop: -53,
     paddingLeft: 8 * scale,
     paddingRight: 8 * scale,
@@ -39,13 +40,31 @@ export default StyleSheet.create({
     fontSize: 12 * scale,
     lineHeight: '32px'
   },
+
+  title: {
+    color: '#666',
+    fontSize: 14 * scale,
+    lineHeight: '64px'
+  },
   
   headerShow: {
-    display: 'block'
+    position: 'absolute',
+    top: 10 * scale,
+    left: 32 * scale + 8 * scale + 8 * scale,
+    opacity: 1,
+    WebkitOpacity: 1,
+    transition: 'all .3s',
+    WebkitTransition: 'all .3s',
   },
   
   headerHide: {
-    display: 'none'
+    position: 'absolute',
+    top: 10 * scale,
+    left: 32 * scale + 8 * scale + 8 * scale + 10 * scale,
+    opacity: 0,
+    WebkitOpacity: 0,
+    transition: 'all .3s',
+    WebkitTransition: 'all .3s',
   },
 
 });
