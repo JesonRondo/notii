@@ -1,10 +1,18 @@
 import React from 'react';
+import dispatcher from '../../helper/dispatcher';
 import styles from '../../theme/default/about';
 
 export default React.createClass({
   
   contextTypes: {
     router: React.PropTypes.func
+  },
+
+  componentDidMount() {
+    dispatcher.dispatch({
+      actionType: 'header:update',
+      title: ''
+    });
   },
 
   render() {
