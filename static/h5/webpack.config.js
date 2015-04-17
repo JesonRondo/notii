@@ -10,9 +10,8 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.js/,
-      loaders: [
-        'babel-loader'
-      ]
+      exclude: /node_modules/,
+      loader: 'babel-loader?optional=runtime&compact=true&comments=false&sourceMaps=true',
     }]
   }
 }

@@ -26,7 +26,8 @@ export default React.createClass({
       cate: cate,
       start: start,
       len: len,
-    }, function(result) {
+      _: +new Date
+    }, (result) => {
       this.setState({
         isLoading: false,
         articles: start ? this.state.articles.concat(result) : result,
@@ -37,7 +38,7 @@ export default React.createClass({
         actionType: 'loading:hide'
       });
 
-    }.bind(this));
+    });
   },
 
   componentDidMount() {

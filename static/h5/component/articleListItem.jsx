@@ -8,6 +8,8 @@ export default React.createClass({
 
   // 抓取摘要
   catchSummary(text) {
+    text = text.replace(/src/img, 'd-src');
+
     let $cnt = $('<div>');
     $cnt.append(text);
 
@@ -22,6 +24,8 @@ export default React.createClass({
 
   // 抓取第一张图
   catchImage(text) {
+    text = text.replace(/src/img, 'd-src');
+
     let $cnt = $('<div>');
     $cnt.append(text);
 
@@ -32,7 +36,7 @@ export default React.createClass({
 
     if ($firstImage.length > 0) {
       hasCapture = true;
-      captureImage = $firstImage.attr('src');
+      captureImage = $firstImage.attr('d-src');
     }
 
     return {

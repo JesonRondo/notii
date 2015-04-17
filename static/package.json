@@ -8,16 +8,10 @@
   },
   "author": "longzhou",
   "devDependencies": {
-    "babel-core": "",
-    "babel-loader": "",
-    "babel-runtime": "",
-    "jsx-loader": "",
-    "babel": "",
-    "react": "",
-    "react-router":"",
-    "react-style": "",
-    "flux": "",
-    "webpack": ""
+    "grunt": "",
+    "grunt-contrib-less": "",
+    "grunt-contrib-concat": "",
+    "grunt-contrib-uglify": ""
   },
   "homepage": "https://longzhou.me",
   "keywords": [

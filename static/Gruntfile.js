@@ -30,7 +30,8 @@ module.exports = function(grunt) {
     uglify: {
       'built': {
         files: {
-          '_/script/d.js': ['_/script/d.js']
+          '_/script/d.js': ['_/script/d.js'],
+          'h5/dist/bundle.js': ['h5/dist/bundle.js'],
         }
       }
     }
