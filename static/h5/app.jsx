@@ -6,6 +6,7 @@ import Layout from './view/layout';
 
 // page
 import Index from './view/page/index';
+import About from './view/page/about';
 import Detail from './view/page/detail';
 
 var {Route, DefaultRoute} = Router;
@@ -13,6 +14,7 @@ var {Route, DefaultRoute} = Router;
 var routes = (
   <Route name="app" path="/" handler={Layout}>
     <Route name="detail" path="/:cate/:year/:month/:day/:blog.html" handler={Detail}/>
+    <Route name="about" path="/about" handler={About}/>
     <Route name="index" path="/:cate" handler={Index}/>
     <DefaultRoute handler={Index}/>
   </Route>

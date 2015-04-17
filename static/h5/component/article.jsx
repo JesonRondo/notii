@@ -17,6 +17,10 @@ export default React.createClass({
   refreshData(props = this.props) {
     let {source, alias} = props;
 
+    dispatcher.dispatch({
+      actionType: 'loading:show'
+    });
+
     $.get(source, {
       alias: alias
     }, function(result) {
@@ -30,6 +34,11 @@ export default React.createClass({
         actionType: 'header:update',
         title: articleData.title
       });
+
+      dispatcher.dispatch({
+        actionType: 'loading:hide'
+      });
+
     }.bind(this));
 
   },

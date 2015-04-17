@@ -3,13 +3,16 @@ import Router from 'react-router';
 
 import Menu from '../component/menu';
 import Header from '../component/header';
+import Loading from '../component/loading';
 
 import Themes from '../theme/default/layout';
 
 var {RouteHandler} = Router;
 
 export default React.createClass({
+
   render() {
+
     return (
       <div style={Themes.layout}>
         <Header source="/api/global" />
@@ -20,7 +23,11 @@ export default React.createClass({
             <RouteHandler />
           </div>
         </div>
+
+        <Loading />
       </div>
     );
+
   }
+
 });

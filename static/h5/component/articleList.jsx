@@ -1,6 +1,7 @@
 import React from 'react';
 import ArticleListItem from './articleListItem';
 import styles from '../theme/default/articleList';
+import dispatcher from '../helper/dispatcher';
 import scrollViewStyles from '../theme/default/scrollView';
 
 export default React.createClass({
@@ -17,6 +18,10 @@ export default React.createClass({
     let {source, cate, alias} = props;
     let len = 6;
 
+    dispatcher.dispatch({
+      actionType: 'loading:show'
+    });
+
     $.get(source, {
       cate: cate,
       start: start,
@@ -27,6 +32,11 @@ export default React.createClass({
         articles: start ? this.state.articles.concat(result) : result,
         isLoaded: (result.length % len !== 0) ? true : false,
       });
+
+      dispatcher.dispatch({
+        actionType: 'loading:hide'
+      });
+
     }.bind(this));
   },
 
