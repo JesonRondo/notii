@@ -2,6 +2,7 @@
 
   var
     $top = document.getElementById('J_back2top'),
+    $loading = document.getElementById('J_sploading'),
     $articles = document.getElementById('J_articles'),
     isLock = false,
     isLoaded = $articles ? false : true; // 是否加载完毕
@@ -54,9 +55,11 @@
     if (!isLoaded && !isLock
       && (globalHeight - scrollY - clientHeight < clientHeight)) {
 
+      $loading.style.opacity = "1"; // show
       load('/load', {
         len: $articles.getElementsByClassName('article').length
       }, function(responseText) {
+        $loading.style.opacity = 0; // hide
         if (responseText) {
           $articles.innerHTML += responseText;
 
