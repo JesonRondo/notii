@@ -4,7 +4,7 @@ var
 
 module.exports = {
   debug: config.debug,
-  avatar: '/img/avatar/1685674.png',
+  avatar: (config.debug ? '' : config.cdnDomain) + '/img/avatar/1685674.png',
   blogName: 'LongZhou',
   domain: 'longzhou.me',
   cdnDomain: config.debug ? '' : config.cdnDomain,
