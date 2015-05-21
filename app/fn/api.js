@@ -1,6 +1,8 @@
 'use strict';
 
 var
+  conf = require('../../conf/config'),
+
   dao = require('../helper/dao'),
   data = require('../helper/data');
 
@@ -35,6 +37,21 @@ module.exports = function *() {
     this.body = '404';
   } else {
     responseData = yield actions[actionName].call(this);
+
+    switch(actionName) {
+      case 'article':
+        // cdn image
+        if (!conf.debug) {
+          var rows = responseData;
+          for (var i = 0, len = rows.length; i < len; i++) {
+            var reg = /(\/img\/.*?\.(jpg|png|gif))/ig;
+            rows[i].text = rows[i].text.replace(reg, conf.cdnDomain + "$1");
+          }
+        }
+        responseData = rows;
+        break;
+    }
+
     this.body = responseData;
   }
 };

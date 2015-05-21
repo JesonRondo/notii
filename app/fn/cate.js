@@ -3,6 +3,8 @@
 var
   util = require('util'),
 
+  conf = require('../../conf/config'),
+
   dao = require('../helper/dao'),
   data = require('../helper/data');
 
@@ -27,6 +29,14 @@ module.exports = function *() {
   if (!this.request.header.referer
     || this.request.header.referer.indexOf(data.domain) < 0) {
     isfirst = true;
+  }
+
+  // cdn image
+  if (!conf.debug) {
+    for (var i = 0, len = rows.length; i < len; i++) {
+      var reg = /(\/img\/.*?\.(jpg|png|gif))/ig;
+      rows[i].text = rows[i].text.replace(reg, conf.cdnDomain + "$1");
+    }
   }
 
   this.body = swig.renderFile('list.html', util._extend(data, {

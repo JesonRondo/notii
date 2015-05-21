@@ -12,7 +12,7 @@
     window.overrideLess();
   </script>
   {% else %}
-  <link rel="stylesheet" href="/_/style/d.css?_=delta">
+  <link rel="stylesheet" href="{{ cdnDomain }}/_/style/d.css?_=delta">
   {% endif %}
 </head>
 <body>
@@ -40,7 +40,7 @@
   <script src="/script/prettify.js"></script>
   <script src="/script/d.js"></script>
   {% else %}
-  <script src="/_/script/d.js?_=delta"></script>
+  <script src="{{ cdnDomain }}/_/script/d.js?_=delta"></script>
   <script>
   var _hmt = _hmt || [];
   (function() {

@@ -8,7 +8,7 @@ export default React.createClass({
     return {
       title: '',
       data: {
-        avatar: '/img/avatar/1685674.png'
+        avatar: 'https://dn-longhou.qbox.me/img/avatar/1685674.png'
       }
     }
   },

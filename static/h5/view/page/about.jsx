@@ -18,7 +18,7 @@ export default React.createClass({
   render() {
     return (
       <div style={styles.about}>
-        <img style={styles.avatar} src="/img/avatar/longzhou_1402465595_11.jpg@200x200" height="100" width="100" />
+        <img style={styles.avatar} src="https://dn-longhou.qbox.me/img/avatar/longzhou_1402465595_11.jpg@200x200" height="100" width="100" />
         <p>没有改变世界</p>
         <p>也没有等到未来</p>
         <p>到今天还是个F2E</p>

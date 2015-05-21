@@ -7,6 +7,7 @@ module.exports = {
   avatar: '/img/avatar/1685674.png',
   blogName: 'LongZhou',
   domain: 'longzhou.me',
+  cdnDomain: config.debug ? '' : config.cdnDomain,
   title: ' - Vic',
   flag: md5.digest_s('祝你幸福还是给你幸福'),
   navs: [{

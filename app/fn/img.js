@@ -15,6 +15,8 @@ var getScaleInfo = function(realPath) {
     if (paths.length > 1) {
       realPath = paths[0];
 
+
+      paths[1] = paths[1].split('.')[0];
       var sizeinfo = paths[1].split('x');
 
       width = sizeinfo[0];

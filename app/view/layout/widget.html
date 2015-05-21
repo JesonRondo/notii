@@ -2,7 +2,7 @@
   {% for index, people in links %}
   <li class="people">
     <a href="{{ people.field3 }}" target="_blank">
-      <img {% if isfirst %}d-{% endif %}src="{{ people.field4 }}@40x40" width="40" height="40" alt="{{ people.field2 }}">
+      <img {% if isfirst %}d-{% endif %}src="{{ cdnDomain }}{{ people.field4 }}@40x40.jpg" width="40" height="40" alt="{{ people.field2 }}">
       <div class="notice">{{ people.field2 }}</div>
     </a>
   </li>

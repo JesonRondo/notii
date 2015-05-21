@@ -3,6 +3,8 @@
 var
   util = require('util'),
 
+  conf = require('../../conf/config'),
+
   dao = require('../helper/dao'),
   data = require('../helper/data');
 
