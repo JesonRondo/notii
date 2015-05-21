@@ -9,7 +9,7 @@ module.exports = {
   domain: 'longzhou.me',
   cdnDomain: config.debug ? '' : config.cdnDomain,
   title: ' - Vic',
-  flag: md5.digest_s('祝你幸福还是给你幸福'),
+  flag: md5.digest_s('经历过了，就向前看吧'),
   navs: [{
     name: '首页',
     link: '/'
