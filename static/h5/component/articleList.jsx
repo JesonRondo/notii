@@ -31,7 +31,7 @@ export default React.createClass({
       this.setState({
         isLoading: false,
         articles: start ? this.state.articles.concat(result) : result,
-        isLoaded: (result.length % len !== 0) ? true : false,
+        isLoaded: (result.length === 0 || (result.length % len !== 0)) ? true : false,
       });
 
       dispatcher.dispatch({

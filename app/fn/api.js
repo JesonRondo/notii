@@ -47,8 +47,8 @@ module.exports = function *() {
             var reg = /(\/img\/.*?\.(jpg|png|gif))/ig;
             rows[i].text = rows[i].text.replace(reg, conf.cdnDomain + "$1");
           }
+          responseData = rows;
         }
-        responseData = rows;
         break;
     }
 
