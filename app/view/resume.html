@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>LongZhou</title>
+  {% if debug %}
+  <link rel="stylesheet/less" href="/style/r.less">
+  <script src="/script/less.js"></script>
+  <script>
+    less["logLevel"] = 1;
+    less["env"] = "development";
+    window.overrideLess();
+  </script>
+  {% else %}
+  <link rel="stylesheet" href="{{ cdnDomain }}/_/style/r.css?_=saber">
+  {% endif %}
+</head>
+<body>
+
+  <article class="resume J_resume">
+    <img src="http://b.hiphotos.baidu.com/baike/g%3D0%3Bw%3D268/sign=105963fed143ad4bb62e43cbf53f6899/0df431adcbef7609825c07c42edda3cc7cd99e12.jpg" alt="素年锦时">
+    <p>全书以春夏秋冬分章。作者以文字探索自我与外在环境及内心世界的关系，以及与之保持的疏离感。这种疏离感使她得以对照记忆与真实之间细微层次，沉着谈论身世，家庭，童年，回忆中消失的南方，流失，生命的客观性。剥离回忆的黑暗和光亮之处，将之呈现在多年新旧读者的面前。并且关注点由早期书写偏重的情感主题，逐渐转移到知识和思省的层面。坦直讨论写作和作品，涉及天分，交际，孤立，圈子，争议，价值观，读书，世相，人情，个人态度等等。风格清淡洗练，观点直率深入。</p>
+    <p>这本书所呈现的心灵疆域和思考力，“深林人不知，明月来相照”，文字如同穿越月光夜色的清越笛声。一个素颜女童和始终执守边缘的写作者，身份分裂交错。出入自如，似漫游无人之境。</p>
+    <p>书中另有一篇最新三万字小说《月棠记》，内容首次涉及都市男女婚姻主题。作者称之为“讲述成人的故事，属于孩子的心。</p>
+    <p>山虚水深，万籁萧萧。〔古琴铭〕</p>
+    <p>独坐幽篁里，弹琴复长啸。深林人不知，明月来相照。〔王维《竹里馆》〕</p>
+    <p>自序：自谈</p>
+    <p>冬 世间，情分。相持。</p>
+    <p>之一南方 大宅。一条河。食物。人情。消失。池塘。游戏。</p>
+    <p>之二村庄 兰花。童年。清风桥。祠堂。</p>
+    <p>之三日影飞去 图书馆。旧物。锦衣。祖母。客观性。寺庙。记忆。</p>
+    <p>之四女童 疆域。大门。</p>
+    <p>秋 白茶，清欢。无别事。</p>
+    <p>猫。危险性。回顾。布匹。朋友。占有。单纯。老虎。存在。恋情。花瓶。她。男子。花市。笃定。植物女子。相信。善良。控制。一期一会。孩子。首饰。名词。种子。女性气质。检验。气味。物品。肉体。昌盛。文身。距离。余地。青蟹。过路客。重复。烟花。家。越南。叙旧。捉迷藏。谈话。寂寞。疼痛。自由。表达。凋谢。煤炭。表白。等待。</p>
+    <p>夏 大端，两忘。捕风捉影。</p>
+    <p>写作。书写。筛选。困顿。戏子。讨论。话题。房屋。摄影师。咖啡店。话。孤立。战刀。潮流。梵·高。姿势。清朗。蔷薇岛屿。短句。交际。对谈。电影院，秘密。自闭。洁净。交流。需要。爱河。天性。车站。担当。阅读。缺陷。拍摄。奢侈。细节。底牌。夏天。静物。选择。规律。标记。克制。评论家。诗人。非喜剧。风格。静静生活。游戏。真相。春 月棠记</p>
+  </article>
+
+  {% if debug %}
+  <script src="/script/r.js"></script>
+  {% else %}
+  <script src="{{ cdnDomain }}/_/script/r.js?_=delta"></script>
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?dcfa320f3848c24822c7ca668c9467b6";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+  {% endif %}
+
+</body>
+</html>

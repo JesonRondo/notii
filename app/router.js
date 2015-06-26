@@ -6,6 +6,7 @@ var router = require('koa-router'),
   fn_img = require('./fn/img'),
   fn_cate = require('./fn/cate'),
   fn_load = require('./fn/load'),
+  fn_resume = require('./fn/resume'),
   fn_about = require('./fn/about'),
   fn_article = require('./fn/article');
 
@@ -16,6 +17,8 @@ app.get('/m', fn_h5); // h5版本
 app.get('/api/:apiname', fn_api); // 数据接口
 
 app.get('/', fn_cate);
+
+app.get('/resume', fn_resume);
 
 app.get('/about', fn_about);
 

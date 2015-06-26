@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          src: ['style/d.less'],
+          src: ['style/d.less', 'style/r.less'],
           dest: '_/',
           ext: '.css'
         }]
@@ -23,6 +23,9 @@ module.exports = function(grunt) {
             'script/prettify.js',
             'script/d.js'
           ],
+          '_/script/r.js': [
+            'script/r.js'
+          ]
         },
       },
     },
@@ -31,6 +34,7 @@ module.exports = function(grunt) {
       'built': {
         files: {
           '_/script/d.js': ['_/script/d.js'],
+          '_/script/r.js': ['_/script/r.js'],
           'h5/dist/bundle.js': ['h5/dist/bundle.js'],
         }
       }
