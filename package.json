@@ -13,7 +13,7 @@
     "co-mysql": "",
     "debug": "",
     "easyimage": "",
-    "koa":"",
+    "koa":"0.18.1",
     "koa-body-parser": "",
     "koa-router": "",
     "md5": "",
