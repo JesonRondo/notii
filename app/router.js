@@ -1,6 +1,7 @@
 'use strict' ;
 
 var router = require('koa-router'),
+  fn_h5 = require('./fn/hey'),
   fn_h5 = require('./fn/h5'),
   fn_api = require('./fn/api'),
   fn_img = require('./fn/img'),
@@ -11,6 +12,8 @@ var router = require('koa-router'),
   fn_article = require('./fn/article');
 
 app.use(router(app));
+
+app.get('/hey', fn_hey); // h5版本
 
 app.get('/m', fn_h5); // h5版本
 
