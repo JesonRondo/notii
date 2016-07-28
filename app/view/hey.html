@@ -10,6 +10,13 @@
       background: rgb(173, 216, 230);
     }
     h1 {
+      margin: 10px 0;
+      font-size: 24px;
+    }
+    i {
+      font-size: 18px;
+    }
+    .w {
       position: fixed;
       width: 100%;
       top: 50%;
@@ -22,14 +29,23 @@
   </style>
 </head>
 <body>
-  <h1 id="hey" class="motto"></h1>
+  <div class="w">
+    <h1 class="title"></h1>
+    <i class="motto"></i>
+  </div>
   <script src="https://dn-longhou.qbox.me/_/script/motto.js"></script>
   <script>
-    new Motto('#hey', {
-      lyric: 'hey 17, i will love u 4ever',
+    new Motto('.title', {
+      lyric: 'hey 17',
+      flashSpeed: 200,
+      flashTimeout: 1000
+    })
+    new Motto('.motto', {
+      lyric: 'i will love u 4ever',
       showUpSpeed: 100,
       flashSpeed: 100
     })
+
   </script>
 </body>
 </html>
