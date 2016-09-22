@@ -1,7 +1,7 @@
 module.exports = {
   debug: false,
 
-  cdnDomain: "https://dn-longhou.qbox.me",
+  cdnDomain: "https://longzhou.me",
 
   dbinfo: function() {
     return {
