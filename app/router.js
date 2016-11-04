@@ -2,6 +2,7 @@
 
 var router = require('koa-router'),
   fn_hey = require('./fn/hey'),
+  fn_eat = require('./fn/eat'),
   fn_h5 = require('./fn/h5'),
   fn_api = require('./fn/api'),
   fn_img = require('./fn/img'),
@@ -14,6 +15,7 @@ var router = require('koa-router'),
 app.use(router(app));
 
 app.get('/hey', fn_hey); // hey 七夕
+app.get('/eat', fn_hey); // eat
 
 app.get('/m', fn_h5); // h5版本
 
