@@ -15,7 +15,7 @@ var router = require('koa-router'),
 app.use(router(app));
 
 app.get('/hey', fn_hey); // hey 七夕
-app.get('/eat', fn_hey); // eat
+app.get('/eat', fn_eat); // eat
 
 app.get('/m', fn_h5); // h5版本
 
