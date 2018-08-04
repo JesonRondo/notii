@@ -1,7 +1,7 @@
 module.exports = {
   debug: false,
 
-  cdnDomain: "https://longzhou.me",
+  cdnDomain: "http://longzhou.me",
 
   dbinfo: function() {
     return {
